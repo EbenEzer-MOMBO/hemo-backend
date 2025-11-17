@@ -4,8 +4,8 @@ services:
     runtime: node
     env: node
     plan: free
-    buildCommand: npm install && node_modules/.bin/prisma generate && node_modules/.bin/prisma migrate deploy
-    startCommand: npm start
+    buildCommand: npm ci && node_modules/.bin/prisma generate && node_modules/.bin/prisma migrate deploy
+    startCommand: bash start.sh
     envVars:
       - key: DATABASE_URL
         fromDatabase:
