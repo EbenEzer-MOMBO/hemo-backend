@@ -1,0 +1,9 @@
+-- CreateTable
+CREATE TABLE "Pouch" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "bloodType" TEXT NOT NULL,
+    "volume" INTEGER NOT NULL,
+    "donationId" INTEGER NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT "Pouch_donationId_fkey" FOREIGN KEY ("donationId") REFERENCES "Donation" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
